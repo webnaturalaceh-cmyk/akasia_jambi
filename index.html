@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Akasia Jambi - Konservasi Beruang Madu Sumatra (Helarctos malayanus), mitigasi konflik satwa, dan restorasi habitat hutan hujan tropis di Provinsi Jambi.">
+  <title>Akasia Jambi | Konservasi Beruang Madu Sumatra</title>
+
+  <!-- Google Fonts: Montserrat (Headings) + Plus Jakarta Sans (Body) + Rubik (Nav & Hero Motto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rubik:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Accessible Skip Navigation Link -->
+  <a href="#beranda" class="skip-link" data-i18n="skipLink">Lewati ke konten utama</a>
+
+  <!-- =========================================================================
+       COMPONENT 1: NAVIGATION BAR (OPTION 1 LAYOUT + FOLIAGE BORDER)
+       ========================================================================= -->
+  <header class="site-header header" id="site-header">
+    <div class="header-container">
+      
+      <!-- ZONE 1: BRAND LOGO (AKASIA JAMBI) -->
+      <div class="brand-logos-container">
+        <a href="#beranda" class="brand-link" aria-label="Akasia Jambi Beranda">
+          <img src="logo_akasia.png" alt="Logo Akasia Jambi" class="brand-logo-img" width="80" height="80">
+        </a>
+      </div>
+
+      <!-- ZONE 2: 5 EXPLORATION MENUS -->
+      <nav class="desktop-nav" aria-label="Navigasi Utama">
+        <ul class="nav-list">
+          
+          <!-- 1. Beranda -->
+          <li class="nav-item">
+            <a href="#beranda" class="nav-link active" data-nav="beranda">
+              <span class="nav-text" data-i18n="navHome">Beranda</span>
+            </a>
+          </li>
+
+          <!-- 2. Tentang Kami -->
+          <li class="nav-item">
+            <a href="#tentang-kami" class="nav-link" data-nav="tentang-kami">
+              <span class="nav-text" data-i18n="navAbout">Tentang Kami</span>
+            </a>
+          </li>
+
+          <!-- 3. Program -->
+          <li class="nav-item">
+            <a href="#program" class="nav-link" data-nav="program">
+              <span class="nav-text" data-i18n="navProgram">Program</span>
+            </a>
+          </li>
+
+          <!-- 4. PARTNER -->
+          <li class="nav-item">
+            <a href="#mitra" class="nav-link" data-nav="mitra">
+              <span class="nav-text" data-i18n="navPartners">PARTNER</span>
+            </a>
+          </li>
+
+          <!-- 5. Kontak -->
+          <li class="nav-item">
+            <a href="#kontak" class="nav-link" data-nav="kontak">
+              <span class="nav-text" data-i18n="navContact">Kontak</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ZONE 3: LANGUAGE SWITCHER & MOBILE MENU TRIGGER -->
+      <div class="header-actions">
+        <!-- Dynamic Language Switcher (ID | EN) -->
+        <div class="lang-switch-wrap" role="group" aria-label="Pilihan Bahasa / Language Switcher">
+          <svg class="lang-globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <button type="button" class="lang-pill-btn active" id="lang-id" data-lang="id" aria-pressed="true">ID</button>
+          <span class="lang-divider" aria-hidden="true">|</span>
+          <button type="button" class="lang-pill-btn" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <!-- Mobile Hamburger Trigger (< 992px) -->
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Buka Menu Navigasi" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+
+    </div>
+
+
+
+    <!-- MOBILE NAVIGATION DRAWER (< 992px) -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true" inert>
+      <div class="mobile-drawer-header">
+        <div class="mobile-brand">
+          <img src="logo_akasia.jpg" alt="Logo Akasia" class="mobile-logo-img" width="38" height="38">
+          <span class="mobile-brand-title">AKASIA JAMBI</span>
+        </div>
+        <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Tutup Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="mobile-nav-list">
+        <li>
+          <a href="#beranda" class="mobile-nav-link active" data-nav="beranda">
+            <span class="mobile-nav-icon">🐾</span>
+            <span class="mobile-nav-text" data-i18n="navHome">Beranda</span>
+          </a>
+        </li>
+        <li>
+          <a href="#tentang-kami" class="mobile-nav-link" data-nav="tentang-kami">
+            <span class="mobile-nav-icon">🌳</span>
+            <span class="mobile-nav-text" data-i18n="navAbout">Tentang Kami</span>
+          </a>
+        </li>
+        <li>
+          <a href="#program" class="mobile-nav-link" data-nav="program">
+            <span class="mobile-nav-icon">🛡️</span>
+            <span class="mobile-nav-text" data-i18n="navProgram">Program</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mitra" class="mobile-nav-link" data-nav="mitra">
+            <span class="mobile-nav-icon">🤝</span>
+            <span class="mobile-nav-text" data-i18n="navPartners">PARTNER</span>
+          </a>
+        </li>
+        <li>
+          <a href="#kontak" class="mobile-nav-link" data-nav="kontak">
+            <span class="mobile-nav-icon">📍</span>
+            <span class="mobile-nav-text" data-i18n="navContact">Kontak</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="mobile-drawer-footer">
+        <button type="button" class="btn-lapor btn-lapor-mobile" id="btn-open-lapor-mobile">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+            <circle cx="12" cy="13" r="4"/>
+          </svg>
+          <span data-i18n="heroCtaReport">LAPOR</span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+
+    <!-- Concave Upward Arch Divider -->
+    <svg class="navbar-arch-curve" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 L1440,0 L1440,48 Q720,0 0,48 Z" fill="#112a1a"/>
+    </svg>
+
+    <!-- Patch Dedaunan Kiri & Kanan (Menutupi kekosongan lengkungan navbar) -->
+    <img src="daun_kiri_tambahan.png" class="leaf-patch-left" alt="" aria-hidden="true">
+    <img src="daun_kanan_tambahan.png" class="leaf-patch-right" alt="" aria-hidden="true">
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT: COMPONENT 2 - BERANDA (#beranda)
+       ========================================================================= -->
+  <main id="beranda" class="beranda-main">
+
+    <!-- -----------------------------------------------------------------------
+         2A. HERO BANNER SECTION
+         ----------------------------------------------------------------------- -->
+    <section class="hero-section" aria-label="Hero Banner - Akasia Jambi">
+      <div class="hero-bg-media">
+        <!-- Sun Bear Sumatra background image -->
+        <img src="Sun_Bear_3.jpg" 
+             alt="Beruang Madu Sumatra (Helarctos malayanus)" 
+             class="hero-img" 
+             loading="eager" 
+             fetchpriority="high">
+        <div class="hero-gradient-overlay" aria-hidden="true"></div>
+        <div class="hero-leaf-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-content-container">
+        <div class="hero-text-col">
+          
+          <!-- Main Headline (Motto) -->
+          <h1 class="hero-headline">
+            <span class="hero-motto-highlight" data-i18n="heroMotto">The forest tells its story, we protect it!</span>
+          </h1>
+
+          <!-- Hero CTA -->
+          <div class="hero-cta-group">
+            <!-- Primary Emergency CTA -->
+            <button type="button" class="btn-primary-report" id="hero-btn-lapor">
+              <svg class="cta-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                <circle cx="12" cy="13" r="4"/>
+                <line x1="19" y1="4" x2="19" y2="7"/>
+                <line x1="19" y1="9" x2="19.01" y2="9"/>
+              </svg>
+              <span data-i18n="heroCtaReport">LAPOR</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         2B. PENGETAHUAN TENTANG BERUANG MADU (EDUCATIONAL SUBSECTION)
+         ----------------------------------------------------------------------- -->
+    <section class="education-section" id="edukasi-beruang" aria-labelledby="edu-heading">
+      <div class="section-container">
+
+        <!-- Section Title Header -->
+        <div class="section-header-center">
+          <h2 id="edu-heading" class="section-title" data-i18n="eduTitle">
+            Mengenal Beruang Madu Sumatra (<span class="latin-species">Helarctos malayanus</span>)
+          </h2>
+          <div class="title-accent-line" aria-hidden="true"></div>
+          <p class="section-lead-desc" data-i18n="eduSubtitle">
+            Spesies payung hutan tropis Sumatra yang menyimpan rahasia keanekaragaman hayati dan keseimbangan ekosistem alami Jambi.
+          </p>
+        </div>
+
+        <!-- 1. INTRODUCTORY SPOTLIGHT CARD (2-COLUMN HIGH-IMPACT LAYOUT) -->
+        <article class="spotlight-card">
+          <div class="spotlight-grid">
+            
+            <!-- Left Column: Visual Frame with Interactive Taxonomy Badges -->
+            <div class="spotlight-visual-wrapper">
+              <div class="spotlight-image-frame">
+                <!-- Sun Bear Wildlife Visual -->
+                <img src="gambar_beruang_madu 1.jpg" 
+                     alt="Beruang Madu di Habitat Lanskap Hutan Jambi" 
+                     class="spotlight-img"
+                     loading="lazy">
+              </div>
+
+              <!-- Taxonomy & Legal Badges Matrix -->
+              <div class="taxonomy-badges-matrix">
+                <div class="tax-badge-pill">
+                  <span class="tax-label" data-i18n="taxLabel1">Nama Ilmiah:</span>
+                  <strong class="tax-value"><em>Helarctos malayanus</em></strong>
+                </div>
+                <div class="tax-badge-pill pill-warning">
+                  <span class="tax-label" data-i18n="taxLabel2">Status IUCN:</span>
+                  <strong class="tax-value" data-i18n="taxValIucn">Vulnerable (Rentan Punah)</strong>
+                </div>
+                <div class="tax-badge-pill pill-protected">
+                  <span class="tax-label" data-i18n="taxLabel3">Status Hukum:</span>
+                  <strong class="tax-value" data-i18n="taxValLegal">Dilindungi Penuh RI</strong>
+                </div>
+                <div class="tax-badge-pill">
+                  <span class="tax-label" data-i18n="taxLabel4">Sebaran Jambi:</span>
+                  <strong class="tax-value" data-i18n="taxValRegion">Bukit Tigapuluh & Kerinci</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Narrative Overview & Ecological Importance -->
+            <div class="spotlight-narrative-wrapper">
+              <div class="spotlight-kicker" data-i18n="spotlightKicker">IKON BIODIVERSITAS SUMATRA</div>
+              <h3 class="spotlight-title" data-i18n="spotlightTitle">
+                Penjaga Kanopi & 'Petani' Hutan Tropis Sumatra
+              </h3>
+              <p class="spotlight-p" data-i18n="spotlightDesc1">
+                Beruang Madu (<em>Helarctos malayanus</em>) adalah jenis beruang terkecil di muka bumi. Hewan ini memiliki ciri khas bulu hitam pekat berkilau serta corak kuning-keemasan berbentuk tapal kuda (U atau V) di dadanya yang unik pada setiap individu, berfungsi layaknya sidik jari manusia.
+              </p>
+              <p class="spotlight-p" data-i18n="spotlightDesc2">
+                Di bentang alam hutan Provinsi Jambi—mulai dari ekosistem Bukit Tigapuluh, Harapan Rainforest, hingga koridor Taman Nasional Kerinci Seblat—satwa soliter ini memegang peran krusial sebagai <strong>spesies payung (umbrella species)</strong>. Menjaga ruang jelajah beruang madu secara otomatis melindungi ribuan flora-fauna hutan hujan lainnya yang bergantung pada kanopi rimba yang sama.
+              </p>
+
+              <!-- Morphological Anatomical Features List -->
+              <div class="feature-bullets-grid">
+                <div class="feature-bullet-item">
+                  <div class="feature-bullet-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="feature-bullet-title" data-i18n="feat1Title">Soliter & Nokturnal</h4>
+                    <p class="feature-bullet-desc" data-i18n="feat1Desc">Aktif mencari makan pada senja hingga malam hari di ketinggian pohon kanopi.</p>
+                  </div>
+                </div>
+
+                <div class="feature-bullet-item">
+                  <div class="feature-bullet-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                      <path d="M2 17l10 5 10-5"/>
+                      <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="feature-bullet-title" data-i18n="feat2Title">Spesies Pemanjat Ulung</h4>
+                    <p class="feature-bullet-desc" data-i18n="feat2Desc">Cakar tajam melengkung hingga 7 cm memungkinkan tidur di sarang kanopi setinggi 10–20 meter.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Quote Callout -->
+              <blockquote class="spotlight-quote">
+                <p data-i18n="spotlightQuote">
+                  "Hilangnya satu individu beruang madu bukan sekadar kehilangan satwa, tetapi terputusnya rantai regenerasi puluhan jenis pohon buah liar di hutan Sumatra."
+                </p>
+                <cite data-i18n="spotlightQuoteCite">— Tim Konservasi Lapangan Akasia Jambi</cite>
+              </blockquote>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- 2. 4-CARD EDUCATIONAL GRID ("MENGAPA BERUANG MADU HARUS DILINDUNGI?") -->
+        <div class="edu-grid-section-header">
+          <h3 class="edu-grid-main-heading" data-i18n="gridHeading">
+            Mengapa Beruang Madu Harus Dilindungi?
+          </h3>
+          <p class="edu-grid-subheading" data-i18n="gridSubheading">
+            Empat pilar penting memahami keunikan biologis, fungsi ekologis penting, ancaman kepunahan, dan aksi nyata mitigasi bersama masyarakat.
+          </p>
+        </div>
+
+        <div class="edu-four-grid">
+          
+          <!-- CARD 1: Karakteristik Unik (Unique Characteristics) -->
+          <div class="edu-card card-characteristics">
+            <div class="card-top-icon-row">
+              <div class="card-icon-badge icon-gold">
+                <!-- Paw / Claw Outline Icon -->
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <ellipse cx="7" cy="10" rx="2" ry="3"/>
+                  <ellipse cx="12" cy="7" rx="2.2" ry="3.5"/>
+                  <ellipse cx="17.5" cy="7" rx="2.2" ry="3.5"/>
+                  <ellipse cx="23" cy="9" rx="2" ry="3"/>
+                  <ellipse cx="27" cy="12" rx="1.8" ry="2.6"/>
+                  <path d="M8 18c-1-3 1.5-6.5 5.5-7 2.2-.3 4.5.8 5.5 1.2 1.2-.5 3.5-1.5 5.8-1.2 4 .5 6.5 4 5.5 7-1 3-3 8-8.5 9.5-2.8.8-6-.2-8.3-2-2.5-2-4.5-4.5-5.5-7.5z"/>
+                </svg>
+              </div>
+              <span class="card-number-tag">01</span>
+            </div>
+
+            <h4 class="card-title" data-i18n="card1Title">Karakteristik Unik</h4>
+            <span class="card-subtitle" data-i18n="card1Subtitle">Morfologi & Adaptasi Kanopi Khusus</span>
+
+            <ul class="card-checklist">
+              <li class="check-item">
+                <span class="check-bullet" aria-hidden="true">✓</span>
+                <span data-i18n="card1P1"><strong>Spesies Terkecil:</strong> Panjang tubuh hanya 1,2–1,5 meter dan berat 30–65 kg, menjadikannya sangat lincah memanjat pohon rimba.</span>
+              </li>
+              <li class="check-item">
+                <span class="check-bullet" aria-hidden="true">✓</span>
+                <span data-i18n="card1P2"><strong>Tanda Dada Tapal Kuda:</strong> Corak kuning keemasan di dada berbentuk huruf U atau V yang unik pada tiap individu layaknya sidik jari.</span>
+              </li>
+              <li class="check-item">
+                <span class="check-bullet" aria-hidden="true">✓</span>
+                <span data-i18n="card1P3"><strong>Cakar Panjang 7 CM:</strong> Melengkung tajam dan kuat untuk merobek batang pohon lapuk serta memanjat hingga kanopi tertinggi.</span>
+              </li>
+              <li class="check-item">
+                <span class="check-bullet" aria-hidden="true">✓</span>
+                <span data-i18n="card1P4"><strong>Lidah Ekstra Panjang (25 cm):</strong> Adaptasi anatomis luar biasa untuk menjilati madu lebah hutan dan rayap di rongga sempit kayu.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CARD 2: Peran Penting di Hutan (Ecological Role) -->
+          <div class="edu-card card-ecological">
+            <div class="card-top-icon-row">
+              <div class="card-icon-badge icon-green">
+                <!-- Sprouting Seedling & Forest Canopy Icon -->
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 28V12"/>
+                  <path d="M16 18c3-4 8-3 8 0s-4 4-8 4"/>
+                  <path d="M16 21c-3-3-7-2-7 0s3 3 7 3"/>
+                  <path d="M16 12c-4-6 2-10 6-8-1 4-3 7-6 8z"/>
+                  <path d="M6 28h20"/>
+                </svg>
+              </div>
+              <span class="card-number-tag">02</span>
+            </div>
+
+            <h4 class="card-title" data-i18n="card2Title">Peran Penting di Hutan</h4>
+            <span class="card-subtitle" data-i18n="card2Subtitle">Gelar Kehormatan 'Petani Hutan'</span>
+
+            <ul class="card-checklist">
+              <li class="check-item">
+                <span class="check-bullet" aria-hidden="true">✓</span>
+                <span data-i18n="card2P1"><strong>Penyemai Benih Alami:</strong> Memakan puluhan jenis buah hutan dan menyebarkan biji utuh berkualitas melalui kotorannya ke penjuru rimba.</span>
+              </li>
+              <li class="check-item">
+                <span class="check-bullet" aria-hidden="true">✓</span>
+                <span data-i18n="card2P2"><strong>Pengendali Hama Pohon:</strong> Membongkar sarang rayap dan kumbang pengebor kayu, menjaga pohon-pohon rimba tetap sehat dan tegak.</span>
+              </li>
+              <li class="check-item">
+                <span class="check-bullet" aria-hidden="true">✓</span>
+                <span data-i18n="card2P3"><strong>Arsitek Penetrasi Cahaya:</strong> Membuat sarang istirahat di cabang kanopi, membuka celah sinar matahari bagi anakan bibit di lantai hutan.</span>
+              </li>
+              <li class="check-item">
+                <span class="check-bullet" aria-hidden="true">✓</span>
+                <span data-i18n="card2P4"><strong>Penyedia Rumah Satwa:</strong> Rongga pohon yang digali beruang madu kemudian dipakai bersarang oleh burung rangkong, bajing, dan lebah.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CARD 3: Ancaman Kepunahan (Major Threats) -->
+          <div class="edu-card card-threats">
+            <div class="card-top-icon-row">
+              <div class="card-icon-badge icon-orange">
+                <!-- Warning / Snare Trap Alert Icon -->
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 4L3 27h26L16 4z"/>
+                  <line x1="16" y1="13" x2="16" y2="19"/>
+                  <line x1="16" y1="23" x2="16.01" y2="23"/>
+                </svg>
+              </div>
+              <span class="card-number-tag tag-alert">03</span>
+            </div>
+
+            <h4 class="card-title" data-i18n="card3Title">Ancaman Kepunahan</h4>
+            <span class="card-subtitle" data-i18n="card3Subtitle">Tekanan Kritis di Lanskap Jambi</span>
+
+            <ul class="card-checklist">
+              <li class="check-item item-threat">
+                <span class="check-bullet bullet-threat" aria-hidden="true">⚠</span>
+                <span data-i18n="card3P1"><strong>Jerat Kawat Babi:</strong> Ancaman paling mematikan. Jerat seling baja di perbatasan kebun kerap menjerat cakar hingga membusuk dan diamputasi.</span>
+              </li>
+              <li class="check-item item-threat">
+                <span class="check-bullet bullet-threat" aria-hidden="true">⚠</span>
+                <span data-i18n="card3P2"><strong>Deforestasi & Koridor Putus:</strong> Alih fungsi hutan primer memecah habitat alami, membatasi pasokan buah liar dan memaksa satwa keluar rimba.</span>
+              </li>
+              <li class="check-item item-threat">
+                <span class="check-bullet bullet-threat" aria-hidden="true">⚠</span>
+                <span data-i18n="card3P3"><strong>Perburuan Liar:</strong> Diburu secara ilegal untuk diambil empedu (obat tradisional), taring, kuku, serta perdagangan anak beruang eksotis.</span>
+              </li>
+              <li class="check-item item-threat">
+                <span class="check-bullet bullet-threat" aria-hidden="true">⚠</span>
+                <span data-i18n="card3P4"><strong>Konflik Manusia-Satwa:</strong> Saat sumber pangan di hutan menipis, beruang mencari buah di kebun warga dan sering kali berujung diracuni.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CARD 4: Tindakan Darurat Masyarakat (What Citizens Should Do) -->
+          <div class="edu-card card-action">
+            <div class="card-top-icon-row">
+              <div class="card-icon-badge icon-gold">
+                <!-- Lifebuoy / Emergency Handshake Rescue Icon -->
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="16" cy="16" r="12"/>
+                  <circle cx="16" cy="16" r="5"/>
+                  <line x1="16" y1="4" x2="16" y2="11"/>
+                  <line x1="16" y1="21" x2="16" y2="28"/>
+                  <line x1="4" y1="16" x2="11" y2="16"/>
+                  <line x1="21" y1="16" x2="28" y2="16"/>
+                </svg>
+              </div>
+              <span class="card-number-tag">04</span>
+            </div>
+
+            <h4 class="card-title" data-i18n="card4Title">Tindakan Darurat Warga</h4>
+            <span class="card-subtitle" data-i18n="card4Subtitle">Prosedur Aman Bila Bertemu Beruang</span>
+
+            <ul class="card-checklist">
+              <li class="check-item item-action">
+                <span class="check-bullet bullet-action" aria-hidden="true">✓</span>
+                <span data-i18n="card4P1"><strong>JANGAN Menyerang / Memojokkan:</strong> Beruang madu cenderung pemalu, namun akan menyerang agresif bila merasa terkepung atau ada anak beruang.</span>
+              </li>
+              <li class="check-item item-action">
+                <span class="check-bullet bullet-action" aria-hidden="true">✓</span>
+                <span data-i18n="card4P2"><strong>JANGAN Pasang Jerat Kawat:</strong> Memasang jerat satwa liar adalah tindak pidana dengan ancaman hukuman 5 tahun penjara (UU No. 5/1990).</span>
+              </li>
+              <li class="check-item item-action">
+                <span class="check-bullet bullet-action" aria-hidden="true">✓</span>
+                <span data-i18n="card4P3"><strong>Ambil Foto dari Jarak Aman:</strong> Dokumentasikan posisi dan kondisi fisik satwa tanpa menyalakan lampu kilat (flash) atau berteriak.</span>
+              </li>
+              <li class="check-item item-action">
+                <span class="check-bullet bullet-action" aria-hidden="true">✓</span>
+                <span data-i18n="card4P4"><strong>Segera Lapor ke Akasia Jambi:</strong> Klik tombol LAPOR di website ini atau hubungi hotline darurat BKSDA Jambi untuk evakuasi cepat.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 3. QUICK IMPACT / FACT STRIP (HIGH-CONTRAST DEEP GREEN #112A1A) -->
+      <div class="fact-strip-banner" role="region" aria-label="Fakta Kunci Beruang Madu">
+        <div class="fact-strip-container">
+          <div class="fact-strip-grid">
+            
+            <!-- Fact 1 -->
+            <div class="fact-box">
+              <span class="fact-metric" data-i18n="fact1Num">1.2 – 1.5 M</span>
+              <span class="fact-title" data-i18n="fact1Title">Panjang Tubuh Rata-Rata</span>
+              <p class="fact-desc" data-i18n="fact1Desc">Spesies beruang terkecil di dunia dengan bobot dewasa 30–65 kilogram.</p>
+            </div>
+
+            <!-- Fact 2 -->
+            <div class="fact-box">
+              <span class="fact-metric" data-i18n="fact2Num">25 CM</span>
+              <span class="fact-title" data-i18n="fact2Title">Panjang Lidah Fleksibel</span>
+              <p class="fact-desc" data-i18n="fact2Desc">Adaptasi kanopi alami untuk menyedot sarang lebah madu liar dan koloni rayap.</p>
+            </div>
+
+            <!-- Fact 3 -->
+            <div class="fact-box">
+              <span class="fact-metric metric-gold" data-i18n="fact3Num">VULNERABLE</span>
+              <span class="fact-title" data-i18n="fact3Title">IUCN Red List Global</span>
+              <p class="fact-desc" data-i18n="fact3Desc">Populasi kian menyusut drastis akibat jerat kawat perburuan dan fragmentasi hutan.</p>
+            </div>
+
+            <!-- Fact 4 -->
+            <div class="fact-box">
+              <span class="fact-metric metric-legal" data-i18n="fact4Num">UU NO. 5/1990</span>
+              <span class="fact-title" data-i18n="fact4Title">Dilindungi Penuh Hukum RI</span>
+              <p class="fact-desc" data-i18n="fact4Desc">Perlindungan mutlak dengan sanksi pidana 5 tahun dan denda Rp 100 Juta.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         OPTIONAL PREVIEW SECTIONS FOR NAVBAR TARGETS (Tentang Kami, Program, PARTNER, Kontak)
+         ----------------------------------------------------------------------- -->
+    <section class="sub-section" id="tentang-kami">
+      <div class="section-container">
+        <div class="section-header-center">
+          <span class="section-tag" data-i18n="aboutPretitle">TENTANG AKASIA JAMBI</span>
+          <h2 class="section-title" data-i18n="aboutTitle">Mendedikasikan Diri untuk Hutan & Satwa Sumatra</h2>
+          <div class="title-accent-line" aria-hidden="true"></div>
+          <p class="section-lead-desc" data-i18n="aboutDesc">
+            Yayasan Akasia Jambi berdiri sebagai inisiatif garda depan penyelamatan Beruang Madu Sumatra (<em>Helarctos malayanus</em>). Kami mengintegrasikan operasi sapu jerat mandiri di perbatasan kebun, pemantauan koridor satwa liar, riset bioakustik kanopi, dan pemberdayaan masyarakat desa hutan untuk hidup berdampingan secara damai dengan satwa kunci Jambi.
+          </p>
+        </div>
+
+        <!-- Vision & Mission Subsection -->
+        <div class="vision-mission-wrapper">
+          <!-- Visi Card -->
+          <div class="visi-card">
+            <span class="visi-badge" data-i18n="vmBadge">VISI & MISI</span>
+            <h3 class="visi-title" data-i18n="visiTitle">Visi AKASIA</h3>
+            <blockquote class="visi-quote" data-i18n="visiText">
+              “Terwujudnya ekosistem yang lestari dan terlindungi melalui konservasi keanekaragaman hayati serta pemberdayaan masyarakat yang berkelanjutan.”
+            </blockquote>
+          </div>
+
+          <!-- Misi Section -->
+          <div class="misi-section">
+            <h3 class="misi-section-title" data-i18n="misiTitle">Misi AKASIA</h3>
+            <div class="misi-grid">
+              <div class="misi-card">
+                <span class="misi-number">01</span>
+                <h4 class="misi-title" data-i18n="misi1Title">Perlindungan Satwa Liar</h4>
+                <p class="misi-desc" data-i18n="misi1Desc">Melaksanakan upaya perlindungan dan konservasi satwa liar, khususnya spesies terancam punah, melalui kegiatan pemantauan, mitigasi ancaman, dan perlindungan habitat.</p>
+              </div>
+              <div class="misi-card">
+                <span class="misi-number">02</span>
+                <h4 class="misi-title" data-i18n="misi2Title">Konservasi Ekosistem</h4>
+                <p class="misi-desc" data-i18n="misi2Desc">Mendorong pengelolaan dan pemulihan ekosistem hutan serta habitat alami untuk menjaga keseimbangan keanekaragaman hayati.</p>
+              </div>
+              <div class="misi-card">
+                <span class="misi-number">03</span>
+                <h4 class="misi-title" data-i18n="misi3Title">Pemberdayaan Masyarakat</h4>
+                <p class="misi-desc" data-i18n="misi3Desc">Meningkatkan keterlibatan dan kapasitas masyarakat lokal sebagai pelaku utama dalam perlindungan lingkungan dan konservasi sumber daya alam.</p>
+              </div>
+              <div class="misi-card">
+                <span class="misi-number">04</span>
+                <h4 class="misi-title" data-i18n="misi4Title">Pendidikan dan Kesadaran Lingkungan</h4>
+                <p class="misi-desc" data-i18n="misi4Desc">Meningkatkan pengetahuan dan kepedulian masyarakat terhadap pentingnya konservasi satwa liar, habitat, dan keberlanjutan lingkungan.</p>
+              </div>
+              <div class="misi-card">
+                <span class="misi-number">05</span>
+                <h4 class="misi-title" data-i18n="misi5Title" data-i188n="misi5Title">Kolaborasi Konservasi</h4>
+                <p class="misi-desc" data-i18n="misi5Desc">Membangun kemitraan dengan pemerintah, lembaga konservasi, akademisi, organisasi masyarakat sipil, dan sektor swasta untuk memperkuat upaya konservasi.</p>
+              </div>
+              <div class="misi-card">
+                <span class="misi-number">06</span>
+                <h4 class="misi-title" data-i18n="misi6Title">Penguatan Berbasis Data dan Pengetahuan</h4>
+                <p class="misi-desc" data-i18n="misi6Desc">Mengembangkan pemantauan, dokumentasi, penelitian, dan pengelolaan informasi sebagai dasar pengambilan keputusan konservasi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section bg-alt" id="program">
+      <div class="section-container">
+        <div class="section-header-center">
+          <span class="section-tag" data-i18n="progPretitle">PROGRAM KONSERVASI</span>
+          <h2 class="section-title" data-i18n="progTitle">Inisiatif Nyata di Lanskap Hutan Jambi</h2>
+          <div class="title-accent-line" aria-hidden="true"></div>
+          <div class="program-cards-mini">
+            <div class="prog-mini-card">
+              <span class="prog-mini-icon">🚫</span>
+              <h4 data-i18n="prog1Title">Operasi Sapu Jerat (Snare Sweep)</h4>
+              <p data-i18n="prog1Desc">Patroli rutin bersama BKSDA membersihkan ribuan jerat seling baja yang mengancam beruang di zona penyangga.</p>
+            </div>
+            <div class="prog-mini-card">
+              <span class="prog-mini-icon">🚑</span>
+              <h4 data-i18n="prog2Title">Evakuasi & Rehabilitasi Satwa</h4>
+              <p data-i18n="prog2Desc">Penanganan medis darurat bagi beruang madu terluka jerat dan program pelepasliaran kembali ke habitat aman.</p>
+            </div>
+            <div class="prog-mini-card">
+              <span class="prog-mini-icon">📡</span>
+              <h4 data-i18n="prog3Title">Mitigasi Konflik Manusia-Beruang</h4>
+              <p data-i18n="prog3Desc">Pemasangan kawat kejut ramah lingkungan dan edukasi pekebun agar panen aman tanpa meracuni beruang.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section" id="mitra">
+      <div class="section-container">
+        <div class="section-header-center">
+          <h2 class="section-title" data-i18n="partnerTitle">PARTNER</h2>
+          <div class="title-accent-line" aria-hidden="true"></div>
+          <div class="partner-logos-row">
+            <div class="partner-card">
+              <img src="Logo_Bears_In_Mind.png" alt="Logo Bears in Mind Foundation" class="partner-logo-img">
+            </div>
+            <div class="partner-card">
+              <img src="logo_bksda.jpg" alt="Logo BKSDA Provinsi Jambi" class="partner-logo-img">
+            </div>
+            <div class="partner-card">
+              <img src="logo_PT_REKI.png" alt="Logo PT REKI - Hutan Harapan" class="partner-logo-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section bg-alt" id="kontak">
+      <div class="section-container">
+        <div class="section-header-center">
+          <span class="section-tag" data-i18n="contactPretitle">HUBUNGI KAMI</span>
+          <h2 class="section-title" data-i18n="contactTitle">Sekretariat & Hotline Darurat</h2>
+          <div class="title-accent-line" aria-hidden="true"></div>
+          <div class="contact-info-grid">
+            <div class="contact-card">
+              <span class="contact-icon">📍</span>
+              <h4>Alamat Kantor</h4>
+              <p>Jl. Jenderal Sudirman No. 45, Thehok, Kota Jambi, Provinsi Jambi 36138</p>
+            </div>
+            <div class="contact-card">
+              <span class="contact-icon">📞</span>
+              <h4>Call Center 24 Jam</h4>
+              <p>Hotline / WhatsApp: +62 897-9276-758<br>BKSDA Jambi: +62 811-744-8844</p>
+            </div>
+            <div class="contact-card">
+              <span class="contact-icon">✉️</span>
+              <h4>Surel & Informasi</h4>
+              <p>officeakasia@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER: ORGANIC CANOPY STYLE
+       ========================================================================= -->
+  <footer class="site-footer footer-section">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="footer-brand-badge">
+            <img src="logo_akasia.jpg" alt="Logo Akasia Jambi" class="footer-logo-img" width="40" height="40">
+            <span class="footer-brand-text">AKASIA JAMBI</span>
+          </div>
+          <p class="footer-motto" data-i18n="heroMotto">The forest tells its story, we protect it!</p>
+          <p class="footer-desc" data-i18n="footerDesc">
+            Lembaga konservasi independen yang bergerak dalam perlindungan Beruang Madu Sumatra dan pemulihan keutuhan ekosistem hutan hujan tropis di Provinsi Jambi.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading" data-i18n="footerNavTitle">Jelajah Halaman</h4>
+          <ul class="footer-link-list">
+            <li><a href="#beranda" data-i18n="navHome">Beranda</a></li>
+            <li><a href="#edukasi-beruang" data-i18n="navEdu">Edukasi Beruang Madu</a></li>
+            <li><a href="#tentang-kami" data-i18n="navAbout">Tentang Kami</a></li>
+            <li><a href="#program" data-i18n="navProgram">Program Konservasi</a></li>
+            <li><a href="#mitra" data-i18n="navPartners">PARTNER Kami</a></li>
+            <li><a href="#kontak" data-i18n="navContact">Kontak & Posko</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-action-col">
+          <h4 class="footer-heading" data-i18n="footerEmergencyTitle">Bantuan Satwa Darurat</h4>
+          <p data-i18n="footerEmergencyDesc">Menemukan beruang madu terjerat atau terluka di sekitar kebun Anda?</p>
+          <button type="button" class="btn-lapor btn-lapor-footer" id="footer-btn-lapor">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            <span data-i18n="btnReport">LAPOR TEMUAN SATWA</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="copyright-year">2026</span> Akasia Jambi Foundation. All rights reserved.</p>
+        <p class="footer-tagline">Dedikasi Perlindungan <em>Helarctos malayanus</em> Sumatra.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Circular Report Button (FAB) -->
+  <button type="button" class="fab-lapor" id="btn-open-lapor" aria-haspopup="dialog" aria-controls="modal-lapor" aria-label="Lapor Temuan Beruang Madu">
+    <span class="lapor-pulse-ring" aria-hidden="true"></span>
+    <svg class="fab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+      <circle cx="12" cy="13" r="4"/>
+    </svg>
+    <span class="fab-label" data-i18n="btnReport">LAPOR</span>
+  </button>
+
+  <!-- =========================================================================
+       MODAL: EMERGENCY REPORT FORM (ACCESSIBLE <dialog>)
+       ========================================================================= -->
+  <dialog class="report-modal" id="modal-lapor" aria-labelledby="modal-lapor-title">
+    <div class="modal-dialog-content">
+      <div class="modal-header">
+        <div class="modal-header-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#EC7A08" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <div>
+          <h2 id="modal-lapor-title" class="modal-title" data-i18n="modalTitle">Formulir Laporan Temuan Beruang Madu</h2>
+          <p class="modal-subtitle" data-i18n="modalSubtitle">
+            Bantuan cepat mitigasi konflik & evakuasi satwa terjerat bersama Akasia Jambi & BKSDA Provinsi Jambi.
+          </p>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Tutup Jendela Laporan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form id="emergency-report-form" class="report-form" novalidate>
+        <div class="form-grid">
+          
+          <!-- Reporter Name -->
+          <div class="form-group">
+            <label for="reporter-name" class="form-label" data-i18n="fieldName">Nama Lengkap Pelapor <span class="required-star">*</span></label>
+            <input type="text" id="reporter-name" name="reporterName" class="form-input" required placeholder="Contoh: Budi Santoso">
+            <span class="field-error-msg" id="error-name" aria-live="polite"></span>
+          </div>
+
+          <!-- Reporter Phone / WhatsApp -->
+          <div class="form-group">
+            <label for="reporter-phone" class="form-label" data-i18n="fieldPhone">Nomor WhatsApp / Telepon Aktif <span class="required-star">*</span></label>
+            <input type="tel" id="reporter-phone" name="reporterPhone" class="form-input" required placeholder="08xxxxxxxxxx">
+            <span class="field-error-msg" id="error-phone" aria-live="polite"></span>
+          </div>
+
+          <!-- Location -->
+          <div class="form-group full-width">
+            <label for="incident-location" class="form-label" data-i18n="fieldLocation">Lokasi Temuan (Desa / Kecamatan / Kabupaten di Jambi) <span class="required-star">*</span></label>
+            <input type="text" id="incident-location" name="incidentLocation" class="form-input" required placeholder="Contoh: Desa Lubuk Mandarsah, Kec. Tengah Ilir, Kab. Tebo">
+            <span class="field-error-msg" id="error-location" aria-live="polite"></span>
+          </div>
+
+          <!-- Condition Category -->
+          <div class="form-group full-width">
+            <label for="incident-condition" class="form-label" data-i18n="fieldCondition">Kondisi Beruang yang Ditemukan <span class="required-star">*</span></label>
+            <select id="incident-condition" name="incidentCondition" class="form-select" required>
+              <option value="" disabled selected data-i18n="optCondition1">-- Pilih Kondisi Satwa --</option>
+              <option value="snared" data-i18n="optCondition2">🚨 Terjerat Kawat Seling Babi / Terperangkap (Mendesak)</option>
+              <option value="injured" data-i18n="optCondition3">🩹 Terluka / Sakit Parah / Tidak Bisa Bergerak</option>
+              <option value="conflict" data-i18n="optCondition4">🌾 Berkeliaran di Kebun / Dekat Pemukiman Warga</option>
+              <option value="cub" data-i18n="optCondition5">🐾 Anak Beruang Terpisah dari Induknya</option>
+              <option value="sign" data-i18n="optCondition6">🔍 Temuan Jejak Cakar / Sarang Baru Tanpa Kontak Langsung</option>
+            </select>
+            <span class="field-error-msg" id="error-condition" aria-live="polite"></span>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group full-width">
+            <label for="incident-desc" class="form-label" data-i18n="fieldDescription">Keterangan Tambahan & Petunjuk Menuju Lokasi</label>
+            <textarea id="incident-desc" name="incidentDesc" class="form-textarea" rows="3" placeholder="Sebutkan patokan jalan, waktu terlihat, apakah satwa terlihat agresif, dll."></textarea>
+          </div>
+
+          <!-- File Upload Note -->
+          <div class="form-group full-width">
+            <label for="incident-photo" class="form-label" data-i18n="fieldPhoto">Unggah Foto / Bukti Temuan (Jika Ada)</label>
+            <input type="file" id="incident-photo" name="incidentPhoto" class="form-file-input" accept="image/*">
+            <small class="form-hint" data-i18n="photoHint">Ambil foto dari jarak aman tanpa menyalakan lampu kilat (flash).</small>
+          </div>
+
+        </div>
+
+        <!-- Hotlines Banner inside Modal -->
+        <div class="modal-hotline-box">
+          <span class="hotline-box-title" data-i18n="hotlinesTitle">Hotline Cepat Darurat 24 Jam:</span>
+          <div class="hotline-links">
+            <a href="tel:08117448844" class="hotline-link">📞 BKSDA Jambi: 0811-744-8844</a>
+            <a href="tel:+628979276758" class="hotline-link">📞 Tim Reaksi Cepat Akasia: +62 897-9276-758</a>
+          </div>
+        </div>
+
+        <div class="modal-form-actions">
+          <button type="button" class="btn-cancel" id="btn-cancel-report" data-i18n="btnCancel">Batal</button>
+          <button type="submit" class="btn-submit-report" id="btn-submit-report">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+            <span data-i18n="btnSubmit">Kirim Laporan Darurat Sekarang</span>
+          </button>
+        </div>
+
+        <!-- Submission Feedback Message -->
+        <div class="form-feedback hidden" id="form-feedback" role="alert" aria-live="assertive"></div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- JavaScript logic -->
+  <script src="script.js"></script>
+</body>
+</html>
