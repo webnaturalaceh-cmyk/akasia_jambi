@@ -129,8 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
       misi5Desc: 'Membangun kemitraan dengan pemerintah, lembaga konservasi, akademisi, organisasi masyarakat sipil, dan sektor swasta untuk memperkuat upaya konservasi.',
       misi6Title: 'Penguatan Berbasis Data dan Pengetahuan',
       misi6Desc: 'Mengembangkan pemantauan, dokumentasi, penelitian, dan pengelolaan informasi sebagai dasar pengambilan keputusan konservasi.',
-      progPretitle: 'PROGRAM KAMI',
-      progTitle: 'Program & Proyek Kami',
+      progTitle: 'PROGRAM KAMI',
       progSubtitle: 'Mengubah Komitmen Konservasi Menjadi Aksi Nyata',
       progLeadDesc: 'AKASIA merancang dan melaksanakan program konservasi berbasis aksi lapangan yang komprehensif untuk melindungi satwa terancam punah, memulihkan ekosistem hutan alami, serta memberdayakan masyarakat lokal di lanskap Jambi.',
       progKegiatan: 'Kegiatan utama:',
@@ -158,14 +157,15 @@ document.addEventListener('DOMContentLoaded', () => {
       prog4K2: 'Riset bio-ekologi lapangan dan analisis ancaman kepunahan satwa berbasis data ilmiah.',
       prog4K3: 'Publikasi berkala serta kampanye kesadaran publik melalui kanal media digital.',
       prog4K4: 'Advokasi kebijakan bersama pemerintah dan lembaga mitra untuk perlindungan satwa berkelanjutan.',
-      galeriTitle: 'Galeri Kegiatan',
+      aktivitasTitle: 'AKTIVITAS KAMI',
+      galeriTitle: 'GALERI KEGIATAN',
       partnerTitle: 'PARTNER',
       contactPretitle: 'HUBUNGI KAMI',
       contactTitle: 'Sekretariat & Hotline Darurat',
 
       // Footer
       footerDesc: 'Lembaga konservasi independen yang bergerak dalam perlindungan Beruang Madu Sumatra dan pemulihan keutuhan ekosistem hutan hujan tropis di Provinsi Jambi.',
-      footerNavTitle: 'Jelajah Halaman',
+      footerNavTitle: 'KONTAK',
       footerEmergencyTitle: 'Bantuan Satwa Darurat',
       footerEmergencyDesc: 'Menemukan beruang madu terjerat atau terluka di sekitar kebun Anda?',
 
@@ -175,6 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
       fieldName: 'Nama Lengkap Pelapor',
       fieldPhone: 'Nomor WhatsApp / Telepon Aktif',
       fieldLocation: 'Lokasi Temuan (Desa / Kecamatan / Kabupaten di Jambi)',
+      fieldCoords: 'Titik Lokasi Kejadian (Koordinat)',
+      btnDetectLocation: '📍 Deteksi',
+      locationGpsHelp: 'Aktifkan GPS pada perangkat Anda untuk hasil akurat.',
       fieldCondition: 'Kondisi Beruang yang Ditemukan',
       optCondition1: '-- Pilih Kondisi Satwa --',
       optCondition2: '🚨 Terjerat Kawat Seling Babi / Terperangkap (Mendesak)',
@@ -311,8 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
       misi5Desc: 'Establish multi-stakeholder partnerships with government bodies, conservation institutions, academia, civil society organizations, and the private sector to reinforce conservation action.',
       misi6Title: 'Data & Science-Based Advancement',
       misi6Desc: 'Develop rigorous monitoring, field documentation, scientific research, and data management systems as the foundation for evidence-based conservation decisions.',
-      progPretitle: 'OUR PROGRAMS',
-      progTitle: 'Our Programs & Projects',
+      progTitle: 'OUR PROGRAMS',
       progSubtitle: 'Turning Conservation Commitments into Real Action',
       progLeadDesc: 'AKASIA develops and implements comprehensive, field-driven conservation programs designed to protect endangered wildlife, restore native forest ecosystems, and empower local communities across the Jambi landscape.',
       progKegiatan: 'Key activities:',
@@ -340,14 +342,15 @@ document.addEventListener('DOMContentLoaded', () => {
       prog4K2: 'Field bio-ecological research and evidence-based threat analyses.',
       prog4K3: 'Regular field publications and public conservation awareness campaigns on digital media.',
       prog4K4: 'Evidence-based policy advocacy in partnership with government agencies and conservation alliances.',
-      galeriTitle: 'Activity Gallery',
+      aktivitasTitle: 'OUR ACTIVITIES',
+      galeriTitle: 'ACTIVITY GALLERY',
       partnerTitle: 'Partners',
       contactPretitle: 'CONTACT US',
       contactTitle: 'Secretariat & Emergency Hotlines',
 
       // Footer
       footerDesc: 'An independent wildlife conservation organization dedicated to protecting the Sumatran Sun Bear and restoring rainforest integrity across Jambi.',
-      footerNavTitle: 'Explore Website',
+      footerNavTitle: 'CONTACT',
       footerEmergencyTitle: 'Wildlife Emergency Response',
       footerEmergencyDesc: 'Discovered a trapped or injured sun bear near your plantation or village?',
 
@@ -357,6 +360,9 @@ document.addEventListener('DOMContentLoaded', () => {
       fieldName: 'Reporter Full Name',
       fieldPhone: 'Active WhatsApp / Phone Number',
       fieldLocation: 'Incident Location (Village / District / Regency in Jambi)',
+      fieldCoords: 'Incident Coordinates (GPS)',
+      btnDetectLocation: '📍 Detect',
+      locationGpsHelp: 'Enable GPS on your device for accurate coordinates.',
       fieldCondition: 'Observed Bear Condition',
       optCondition1: '-- Select Bear Condition --',
       optCondition2: '🚨 Trapped in Wire Snare / Immobilized (Urgent)',
@@ -555,7 +561,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const closeLaporBtn = document.getElementById('modal-close-btn');
   const cancelLaporBtn = document.getElementById('btn-cancel-report');
-  const reportForm = document.getElementById('emergency-report-form');
+  const reportForm = document.getElementById('report-form') || document.getElementById('emergency-report-form');
   const formFeedback = document.getElementById('form-feedback');
 
   function openReportModal() {
@@ -622,6 +628,95 @@ document.addEventListener('DOMContentLoaded', () => {
   const OFFICIAL_PHONE = '+62 897-9276-758';
   const OFFICIAL_WHATSAPP_NUMBER = '628979276758';
 
+  // Geolocation detection handler
+  const btnDeteksiLokasi = document.getElementById('btn-deteksi-lokasi');
+  const inputLokasi = document.getElementById('laporan-lokasi');
+  const lokasiStatus = document.getElementById('lokasi-status');
+
+  if (btnDeteksiLokasi && inputLokasi) {
+    btnDeteksiLokasi.addEventListener('click', () => {
+      if (!('geolocation' in navigator)) {
+        if (lokasiStatus) {
+          lokasiStatus.textContent = currentLang === 'en'
+            ? 'Geolocation is not supported by your browser.'
+            : 'Fitur lokasi tidak didukung oleh browser Anda.';
+          lokasiStatus.className = 'location-help status-error';
+        }
+        return;
+      }
+
+      btnDeteksiLokasi.disabled = true;
+      const prevBtnText = btnDeteksiLokasi.textContent;
+      btnDeteksiLokasi.textContent = currentLang === 'en' ? '⏳ Detecting...' : '⏳ Mencari...';
+
+      if (lokasiStatus) {
+        lokasiStatus.textContent = currentLang === 'en'
+          ? 'Retrieving GPS coordinates from device...'
+          : 'Sedang mencari titik koordinat GPS dari perangkat Anda...';
+        lokasiStatus.className = 'location-help status-loading';
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude.toFixed(6);
+          const lng = position.coords.longitude.toFixed(6);
+          const acc = Math.round(position.coords.accuracy);
+
+          inputLokasi.value = `${lat}, ${lng} (±${acc}m)`;
+          inputLokasi.classList.remove('is-invalid');
+
+          btnDeteksiLokasi.disabled = false;
+          btnDeteksiLokasi.textContent = currentLang === 'en' ? '✓ Detected' : '✓ Terdeteksi';
+
+          if (lokasiStatus) {
+            lokasiStatus.textContent = currentLang === 'en'
+              ? `✓ GPS captured: ${lat}, ${lng} (±${acc}m)`
+              : `✓ Titik koordinat terdeteksi: ${lat}, ${lng} (akurasi ±${acc}m)`;
+            lokasiStatus.className = 'location-help status-success';
+          }
+        },
+        (error) => {
+          btnDeteksiLokasi.disabled = false;
+          btnDeteksiLokasi.textContent = prevBtnText;
+
+          let msg = '';
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              msg = currentLang === 'en'
+                ? 'Location permission denied. Please allow GPS access in your browser settings.'
+                : 'Akses lokasi ditolak. Harap izinkan akses GPS di pengaturan browser/perangkat.';
+              break;
+            case error.POSITION_UNAVAILABLE:
+              msg = currentLang === 'en'
+                ? 'Location info is unavailable.'
+                : 'Informasi sinyal GPS atau lokasi tidak tersedia.';
+              break;
+            case error.TIMEOUT:
+              msg = currentLang === 'en'
+                ? 'Location request timed out. Please try again.'
+                : 'Waktu permintaan lokasi habis. Silakan coba lagi.';
+              break;
+            default:
+              msg = currentLang === 'en'
+                ? 'Failed to retrieve location.'
+                : 'Gagal mendeteksi lokasi.';
+              break;
+          }
+
+          if (lokasiStatus) {
+            lokasiStatus.textContent = msg;
+            lokasiStatus.className = 'location-help status-error';
+          }
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0
+        }
+      );
+    });
+  }
+
   // Form submission handler with validation
   if (reportForm) {
     reportForm.addEventListener('submit', (e) => {
@@ -631,6 +726,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const phoneInput = document.getElementById('reporter-phone');
       const locInput = document.getElementById('incident-location');
       const condSelect = document.getElementById('incident-condition');
+      const coordInput = document.getElementById('laporan-lokasi');
+      const coordStatus = document.getElementById('lokasi-status');
 
       let isValid = true;
 
@@ -654,6 +751,17 @@ document.addEventListener('DOMContentLoaded', () => {
       checkField(locInput, 'error-location', 'Lokasi temuan wajib diisi', 'Location is required');
       checkField(condSelect, 'error-condition', 'Pilih kondisi satwa', 'Please select bear condition');
 
+      if (coordInput && coordInput.hasAttribute('required') && !coordInput.value.trim()) {
+        coordInput.classList.add('is-invalid');
+        if (coordStatus) {
+          coordStatus.textContent = currentLang === 'en'
+            ? 'Please click "Detect" to record your coordinates.'
+            : 'Mohon klik tombol "Deteksi" untuk merekam koordinat lokasi.';
+          coordStatus.className = 'location-help status-error';
+        }
+        isValid = false;
+      }
+
       if (!isValid) {
         if (formFeedback) {
           formFeedback.className = 'form-feedback';
@@ -666,7 +774,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // WhatsApp target dispatch URL
-      const waText = encodeURIComponent(`Halo Akasia Jambi, saya ${nameInput.value.trim()} (${phoneInput.value.trim()}) melaporkan temuan beruang madu di ${locInput.value.trim()}.`);
+      const coordsVal = coordInput && coordInput.value.trim() ? ` [Koordinat: ${coordInput.value.trim()}]` : '';
+      const waText = encodeURIComponent(`Halo Akasia Jambi, saya ${nameInput.value.trim()} (${phoneInput.value.trim()}) melaporkan temuan beruang madu di ${locInput.value.trim()}.${coordsVal}`);
       const waRedirectUrl = `https://wa.me/${OFFICIAL_WHATSAPP_NUMBER}?text=${waText}`;
 
       // Successful simulated submission
@@ -679,6 +788,14 @@ document.addEventListener('DOMContentLoaded', () => {
       // Reset form after short delay
       setTimeout(() => {
         reportForm.reset();
+        if (inputLokasi) inputLokasi.value = '';
+        if (lokasiStatus) {
+          lokasiStatus.textContent = translations[currentLang].locationGpsHelp || 'Aktifkan GPS pada perangkat Anda untuk hasil akurat.';
+          lokasiStatus.className = 'location-help';
+        }
+        if (btnDeteksiLokasi) {
+          btnDeteksiLokasi.textContent = translations[currentLang].btnDetectLocation || '📍 Deteksi';
+        }
         setTimeout(() => {
           closeReportModal();
         }, 2200);
@@ -725,4 +842,8 @@ document.addEventListener('DOMContentLoaded', () => {
     copyrightYearEl.textContent = new Date().getFullYear();
   }
 
+  // Trigger Instagram embed processing if available
+  if (window.instgrm && window.instgrm.Embeds) {
+    window.instgrm.Embeds.process();
+  }
 });
