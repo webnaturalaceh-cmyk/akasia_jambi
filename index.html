@@ -30,9 +30,9 @@
         </a>
       </div>
 
-      <!-- ZONE 2: 5 EXPLORATION MENUS -->
-      <nav class="desktop-nav" aria-label="Navigasi Utama">
-        <ul class="nav-list">
+      <!-- ZONE 2: 6 EXPLORATION MENUS -->
+      <nav class="desktop-nav nav-menu-desktop" aria-label="Navigasi Utama">
+        <ul class="nav-list nav-menu-desktop">
           
           <!-- 1. Beranda -->
           <li class="nav-item">
@@ -55,14 +55,19 @@
             </a>
           </li>
 
-          <!-- 4. PARTNER -->
+          <!-- 4. Galeri -->
+          <li class="nav-item">
+            <a href="#galeri" class="nav-link nav-text" data-nav="galeri" data-i18n="navGaleri">GALERI</a>
+          </li>
+
+          <!-- 5. PARTNER -->
           <li class="nav-item">
             <a href="#mitra" class="nav-link" data-nav="mitra">
               <span class="nav-text" data-i18n="navPartners">PARTNER</span>
             </a>
           </li>
 
-          <!-- 5. Kontak -->
+          <!-- 6. Kontak -->
           <li class="nav-item">
             <a href="#kontak" class="nav-link" data-nav="kontak">
               <span class="nav-text" data-i18n="navContact">Kontak</span>
@@ -112,7 +117,7 @@
         </button>
       </div>
 
-      <ul class="mobile-nav-list">
+      <ul class="mobile-nav-list mobile-nav-menu">
         <li>
           <a href="#beranda" class="mobile-nav-link active" data-nav="beranda">
             <span class="mobile-nav-icon">🐾</span>
@@ -129,6 +134,12 @@
           <a href="#program" class="mobile-nav-link" data-nav="program">
             <span class="mobile-nav-icon">🛡️</span>
             <span class="mobile-nav-text" data-i18n="navProgram">Program</span>
+          </a>
+        </li>
+        <li>
+          <a href="#galeri" class="mobile-nav-link" data-nav="galeri">
+            <span class="mobile-nav-icon">📸</span>
+            <span class="mobile-nav-text" data-i18n="navGaleri">GALERI</span>
           </a>
         </li>
         <li>
@@ -598,26 +609,99 @@
     <section class="sub-section bg-alt" id="program">
       <div class="section-container">
         <div class="section-header-center">
-          <span class="section-tag" data-i18n="progPretitle">PROGRAM KONSERVASI</span>
-          <h2 class="section-title" data-i18n="progTitle">Inisiatif Nyata di Lanskap Hutan Jambi</h2>
+          <span class="section-tag" data-i18n="progPretitle">PROGRAM KAMI</span>
+          <h2 class="section-title" data-i18n="progTitle">Our Programs &amp; Projects</h2>
+          <p class="section-subtitle" data-i18n="progSubtitle">Turning Conservation Commitments into Real Action</p>
           <div class="title-accent-line" aria-hidden="true"></div>
-          <div class="program-cards-mini">
-            <div class="prog-mini-card">
-              <span class="prog-mini-icon">🚫</span>
-              <h4 data-i18n="prog1Title">Operasi Sapu Jerat (Snare Sweep)</h4>
-              <p data-i18n="prog1Desc">Patroli rutin bersama BKSDA membersihkan ribuan jerat seling baja yang mengancam beruang di zona penyangga.</p>
+          <p class="section-lead-desc" data-i18n="progLeadDesc">AKASIA develops and implements comprehensive, field-driven conservation programs designed to protect endangered wildlife, restore native forest ecosystems, and empower local communities across the Jambi landscape.</p>
+        </div>
+
+        <div class="program-grid">
+          <!-- Program Card 01 -->
+          <div class="program-card">
+            <div class="program-card-header">
+              <span class="program-num-badge">01</span>
+              <h3 class="program-card-title" data-i18n="prog1Title">Wildlife Conservation and Protection</h3>
             </div>
-            <div class="prog-mini-card">
-              <span class="prog-mini-icon">🚑</span>
-              <h4 data-i18n="prog2Title">Evakuasi & Rehabilitasi Satwa</h4>
-              <p data-i18n="prog2Desc">Penanganan medis darurat bagi beruang madu terluka jerat dan program pelepasliaran kembali ke habitat aman.</p>
-            </div>
-            <div class="prog-mini-card">
-              <span class="prog-mini-icon">📡</span>
-              <h4 data-i18n="prog3Title">Mitigasi Konflik Manusia-Beruang</h4>
-              <p data-i18n="prog3Desc">Pemasangan kawat kejut ramah lingkungan dan edukasi pekebun agar panen aman tanpa meracuni beruang.</p>
-            </div>
+            <p class="program-desc" data-i18n="prog1Desc">Direct protection and systematic monitoring of Sumatra's endangered wildlife species, particularly the Sun Bear (Helarctos malayanus), through regular anti-poaching patrols, snare removals, and rapid emergency rescue interventions.</p>
+            <div class="program-divider"></div>
+            <h4 class="kegiatan-title" data-i18n="progKegiatan">Kegiatan utama:</h4>
+            <ul class="kegiatan-list">
+              <li data-i18n="prog1K1">Operasi Sapu Jerat (Snare Sweep Patrols) rutin di zona penyangga dan koridor satwa.</li>
+              <li data-i18n="prog1K2">Penyelamatan darurat, evakuasi, dan rehabilitasi satwa liar yang terluka akibat jerat.</li>
+              <li data-i18n="prog1K3">Pemantauan populasi dan deteksi satwa liar menggunakan kamera jebak (camera trap).</li>
+              <li data-i18n="prog1K4">Mitigasi dan penanganan interaksi negatif manusia-satwa liar di wilayah perbatasan kebun.</li>
+            </ul>
           </div>
+
+          <!-- Program Card 02 -->
+          <div class="program-card">
+            <div class="program-card-header">
+              <span class="program-num-badge">02</span>
+              <h3 class="program-card-title" data-i18n="prog2Title">Habitat and Ecosystem Restoration</h3>
+            </div>
+            <p class="program-desc" data-i18n="prog2Desc">Restoring degraded forest landscapes and preserving critical ecological corridors to safeguard biodiversity, maintain natural food sources, and ensure habitat connectivity across Jambi's lowland rainforests.</p>
+            <div class="program-divider"></div>
+            <h4 class="kegiatan-title" data-i18n="progKegiatan">Kegiatan utama:</h4>
+            <ul class="kegiatan-list">
+              <li data-i18n="prog2K1">Restorasi ekosistem dan pengayaan pohon pakan alami satwa di area terdegradasi.</li>
+              <li data-i18n="prog2K2">Perlindungan koridor jelajah satwa liar untuk mencegah fragmentasi habitat.</li>
+              <li data-i18n="prog2K3">Patroli perlindungan kawasan bersama BKSDA dan pengelola lanskap hutan.</li>
+              <li data-i18n="prog2K4">Pemantauan kesehatan ekosistem dan pemetaan tutupan tajuk hutan secara berkala.</li>
+            </ul>
+          </div>
+
+          <!-- Program Card 03 -->
+          <div class="program-card">
+            <div class="program-card-header">
+              <span class="program-num-badge">03</span>
+              <h3 class="program-card-title" data-i18n="prog3Title">Community Empowerment &amp; Coexistence</h3>
+            </div>
+            <p class="program-desc" data-i18n="prog3Desc">Engaging and strengthening local forest-edge communities as primary conservation partners, promoting peaceful human-wildlife coexistence, and developing sustainable, non-destructive livelihood alternatives.</p>
+            <div class="program-divider"></div>
+            <h4 class="kegiatan-title" data-i18n="progKegiatan">Kegiatan utama:</h4>
+            <ul class="kegiatan-list">
+              <li data-i18n="prog3K1">Pemasangan dan pemeliharaan pagar kawat kejut (solar electric fence) ramah satwa.</li>
+              <li data-i18n="prog3K2">Pelatihan teknis bagi pekebun dan petani untuk melindungi hasil panen tanpa racun.</li>
+              <li data-i18n="prog3K3">Pembentukan dan pembinaan kelompok kader konservasi desa tanggap satwa.</li>
+              <li data-i18n="prog3K4">Pengembangan mata pencaharian ramah lingkungan berbasis Hasil Hutan Bukan Kayu (HHBK).</li>
+            </ul>
+          </div>
+
+          <!-- Program Card 04 -->
+          <div class="program-card">
+            <div class="program-card-header">
+              <span class="program-num-badge">04</span>
+              <h3 class="program-card-title" data-i18n="prog4Title">Education, Research &amp; Policy Advocacy</h3>
+            </div>
+            <p class="program-desc" data-i18n="prog4Desc">Fostering public conservation awareness, training future conservationists, and generating evidence-based scientific research to support policy dialogue and long-term wildlife protection frameworks.</p>
+            <div class="program-divider"></div>
+            <h4 class="kegiatan-title" data-i18n="progKegiatan">Kegiatan utama:</h4>
+            <ul class="kegiatan-list">
+              <li data-i18n="prog4K1">Program edukasi dan sosialisasi konservasi ke sekolah, universitas, dan masyarakat lokal.</li>
+              <li data-i18n="prog4K2">Riset bio-ekologi lapangan dan analisis ancaman kepunahan satwa berbasis data ilmiah.</li>
+              <li data-i18n="prog4K3">Publikasi berkala serta kampanye kesadaran publik melalui kanal media digital.</li>
+              <li data-i18n="prog4K4">Advokasi kebijakan bersama pemerintah dan lembaga mitra untuk perlindungan satwa berkelanjutan.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. GALERI KEGIATAN -->
+    <section class="sub-section" id="galeri">
+      <div class="section-container">
+        <div class="section-header-center">
+          <h2 class="section-title" data-i18n="galeriTitle">Galeri Kegiatan</h2>
+          <div class="title-accent-line" aria-hidden="true"></div>
+        </div>
+        <div class="ig-gallery-grid">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfyUKXESBr_/"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfsCo_JS7k2/"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfXJeu0SCZL/"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfU4yVAS1wU/"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfS9wlkT0yG/"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfS9sw2zsHq/"></blockquote>
         </div>
       </div>
     </section>
@@ -632,10 +716,13 @@
               <img src="Logo_Bears_In_Mind.png" alt="Logo Bears in Mind Foundation" class="partner-logo-img">
             </div>
             <div class="partner-card">
-              <img src="logo_bksda.jpg" alt="Logo BKSDA Provinsi Jambi" class="partner-logo-img">
+              <img src="logo_PT_REKI.png" alt="Logo PT REKI - Hutan Harapan" class="partner-logo-img">
             </div>
             <div class="partner-card">
-              <img src="logo_PT_REKI.png" alt="Logo PT REKI - Hutan Harapan" class="partner-logo-img">
+              <img src="logo_bioma_tropika_indonesia.jpeg" alt="Logo Bioma Tropika Indonesia" class="partner-logo-img" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="logo_komunitas_sekutu_bumi.PNG" alt="Logo Komunitas Sekutu Bumi" class="partner-logo-img" loading="lazy">
             </div>
           </div>
         </div>
@@ -695,6 +782,7 @@
             <li><a href="#edukasi-beruang" data-i18n="navEdu">Edukasi Beruang Madu</a></li>
             <li><a href="#tentang-kami" data-i18n="navAbout">Tentang Kami</a></li>
             <li><a href="#program" data-i18n="navProgram">Program Konservasi</a></li>
+            <li><a href="#galeri" data-i18n="navGaleri">GALERI</a></li>
             <li><a href="#mitra" data-i18n="navPartners">PARTNER Kami</a></li>
             <li><a href="#kontak" data-i18n="navContact">Kontak & Posko</a></li>
           </ul>
@@ -838,5 +926,8 @@
 
   <!-- JavaScript logic -->
   <script src="script.js"></script>
+
+  <!-- Instagram Embed Script -->
+  <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
